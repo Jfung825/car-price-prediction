@@ -203,12 +203,8 @@ elif page == "🧪 ทดสอบ Neural Network":
 
     @st.cache_resource
     def load_nn():
-        try:
-            import tensorflow as tf
-            nn = tf.keras.models.load_model("nn_model_d2.keras")
-        except Exception:
-            import keras
-            nn = keras.models.load_model("nn_model_d2.keras")
+        import keras
+        nn      = keras.models.load_model("nn_model_d2.keras")
         scaler  = joblib.load("scaler2.pkl")
         columns = joblib.load("feature_columns_d2.pkl")
         return nn, scaler, columns
